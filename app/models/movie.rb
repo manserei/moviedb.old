@@ -4,6 +4,12 @@ class Movie < ActiveRecord::Base
   validates_presence_of :title, :year
   validates_uniqueness_of :title
 
+  after_create :alert_admins
+
+  def alert_admins
+    # ...
+  end
+
   def to_param
     "#{id}-#{title.parameterize}"
   end
