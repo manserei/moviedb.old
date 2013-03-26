@@ -1,0 +1,25 @@
+<%= form_for @movie do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= @movie.errors[:title].to_sentence %>
+  </p>
+
+  <p>
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+    <%= @movie.errors[:year].to_sentence %>
+  </p>
+
+  <p>
+    <%= form.label :length %>
+    <%= form.text_field :length %>
+  </p>
+
+  <p>
+    <%= form.label :language %>
+    <%= form.text_field :language %>
+  </p>
+
+  <%= form.submit %>
+<% end %>
