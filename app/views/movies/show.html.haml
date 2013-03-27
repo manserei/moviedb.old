@@ -1,0 +1,15 @@
+%h1
+  = @movie.title
+  - if @movie.year.present?
+    (#{ @movie.year })
+
+%p
+  Length: #{ @movie.length } minutes
+  %br
+  Language:
+  = @movie.language
+
+%p
+  = link_to "Edit", edit_movie_path(@movie)
+  = delete_movie_link(@movie)
+  = link_to "Back", movies_path
