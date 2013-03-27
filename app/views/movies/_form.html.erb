@@ -6,6 +6,12 @@
   </p>
 
   <p>
+    <%= form.label :genre %>
+    <%= form.collection_select :genre_id, Genre.order('name').all, :id, :name,
+          :include_blank => true %>
+  </p>
+
+  <p>
     <%= form.label :year %>
     <%= form.text_field :year %>
     <%= @movie.errors[:year].to_sentence %>

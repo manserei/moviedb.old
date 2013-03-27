@@ -3,6 +3,11 @@
   - if @movie.year.present?
     (#{ @movie.year })
 
+// view genre if available
+- if @movie.genre.present?
+  %p
+    Genre: #{ link_to @movie.genre.name, @movie.genre }
+
 %p
   Length: #{ @movie.length } minutes
   %br
